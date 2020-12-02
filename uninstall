@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Start
+echo "The Hacking ToolKit (uninstaller V.Linux-1.2)"
+echo "By: RafaTech Development"
+echo ""
+
+# Permissions
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+# No Permissions
+
+echo "[!] Un-Installer must be run as root (sudo mode)"
+echo "[!] Aborted."
+echo "[!] Please try again as root user."
+exit
+fi
+
+# Info
+echo "[!] Uninstaller Started, Please wait. (v.Linux-1.2)"
+echo ""
+
+# Remove old versions (if found)
+echo "[!] Removing The Hacking ToolKit"
+echo ""
+rm -rf /opt/the-hacking-toolkit
+echo ""
+
+# Success
+echo "Uninstalled successfully."
+echo "Uninstaller Version Linux-1.2"
+echo "If you did not like the software please inform us to see what we can do."

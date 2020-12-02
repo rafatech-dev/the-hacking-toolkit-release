@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Start
+echo "The Hacking ToolKit (installation V.Linux-1.2)"
+echo "By: RafaTech Development"
+echo ""
+
+# Permissions
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+# No Permissions
+
+echo "[!] Installation must be run as root (sudo mode)"
+echo "[!] Installation Aborted."
+echo "[!] Please try again as root user."
+exit
+fi
+
+# Info
+echo "[!] Installation Started, Please wait. (v.Linux-1.0)"
+echo ""
+
+# Remove old versions (if found)
+echo "[!] Searching and attemping to delete old versions of this program..."
+echo ""
+rm -rf /opt/the-hacking-toolkit
+echo ""
+
+# Packages
+echo "[!] Installating packages..."
+echo ""
+apt install figlet git python
+echo ""
+
+# Project Directory in /opt
+echo "[!] Creating project directory..."
+echo ""
+cd /opt
+git clone https://github.com/rafatech-dev/the-hacking-toolkit
+echo ""
+echo "[+] Done."
+echo ""
+
+# Finish
+echo "[+] Installation finished. (Version Linux-1.2)"
+echo "[+] The Hacking ToolKit is now installed on /opt/the-hacking-toolkit."
+echo ""
+echo "[+] If you encounter any mistakes, please report them to RafaTech Development."
+echo ""
+echo "[!] MIT Licensed"
+echo ""
+
+figlet "Hacking ToolKit"
+echo "[!] V. Linux-1.2"
+echo "[!] All rights reserved."
